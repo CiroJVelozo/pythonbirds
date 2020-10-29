@@ -9,9 +9,11 @@ class Pessoa:
 
 if __name__ == '__main__':
 
-     jose = Pessoa()
+     jose = Pessoa( nome='José',idade=25)
 
      ciro = Pessoa(jose,nome='Ciro',idade=25)
+     #inserindo atributo dinamico no objeto ciro
+     ciro.sobrenome = 'josé velozo'
 
      print(Pessoa.comprimentar(ciro))
      #print(id(ciro))
@@ -19,3 +21,12 @@ if __name__ == '__main__':
      #print(ciro.nome)
      #print(ciro.idade)
      print(ciro.filhos)
+     print(ciro.sobrenome)
+
+     print(ciro.__dict__)
+     print()
+     print(jose.__dict__)
+     #deletando dinamicamente um atributo de um objeto , pode deletar qualquer atributo
+     del ciro.sobrenome
+
+
