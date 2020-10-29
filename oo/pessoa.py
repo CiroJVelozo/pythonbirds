@@ -9,6 +9,13 @@ class Pessoa:
 
     def comprimentar(self):
         return f'Ola {id(self)}'
+    @staticmethod
+    def metodo_estatico():
+        return 42
+    #é usado classmethod quando se quer usar os conteudos da classe
+    @classmethod
+    def nome_e_atributos_da_classe(cls):
+        return f'{cls}, olhos={cls.olhos}'
 
 if __name__ == '__main__':
 
