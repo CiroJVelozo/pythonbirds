@@ -1,4 +1,7 @@
 class Pessoa:
+
+    olhos = 2
+
     def __init__(self,*filho, nome = None,idade = None):
         self.nome = nome
         self.idade = idade
@@ -28,5 +31,8 @@ if __name__ == '__main__':
      print(jose.__dict__)
      #deletando dinamicamente um atributo de um objeto , pode deletar qualquer atributo
      del ciro.sobrenome
+
+     print(ciro.olhos)
+     print(jose.olhos)
 
 
