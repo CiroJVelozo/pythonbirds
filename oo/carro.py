@@ -1,16 +1,18 @@
 class motor:
-    def __init__(self, velocidade = 0):
-        self.velocidade = velocidade
+    def __init__(self):
+        self.velocidade = 0
 
     def acelerar(self):
         self.velocidade+=1
 
     def frear(self):
 
-        if self.velocidade <= 1:
-            self.velocidade = 0
-        else:
-            self.velocidade -= 2
+        self.velocidade -=2
+        self.velocidade = max(0,self.velocidade)
+        # if self.velocidade <= 1:
+        #     self.velocidade = 0
+        # else:
+        #     self.velocidade -= 2
 
 class  direcao:
 
@@ -43,5 +45,5 @@ class  direcao:
 
         return self.valor
 
-
 if __name__ == '__main__':
+    print()
