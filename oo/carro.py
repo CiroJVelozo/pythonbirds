@@ -14,34 +14,47 @@ class motor:
         # else:
         #     self.velocidade -= 2
 
+NORTE = 'Norte'
+LESTE = 'Leste'
+SUL = 'Sul'
+OESTE = 'Oeste'
+
 class  direcao:
 
-    def __init__(self, valor = 'N'):
-        self.valor = valor
+    girar_a_direita_dct = {NORTE:LESTE, LESTE:SUL, SUL:OESTE, OESTE:NORTE}
+
+    girar_a_esquerda_dct = {NORTE:OESTE,OESTE:SUL,SUL:LESTE,LESTE:NORTE}
+
+    def __init__(self):
+        self.valor = NORTE
 
     def girar_a_direita(self):
 
-        if self.valor == 'N':
-            self.valor ='L'
-        elif self.valor =='L':
-            self.valor = 'S'
-        elif self.valor =='S':
-            self.valor ='O'
-        elif self.valor=='O':
-            self.valor = 'N'
+        self.valor = self.girar_a_direita_dct(self.valor)
+
+        # if self.valor == NORTE:
+        #     self.valor =LESTE
+        # elif self.valor ==LESTE:
+        #     self.valor = SUL
+        # elif self.valor ==SUL:
+        #     self.valor =OESTE
+        # elif self.valor==OESTE:
+        #     self.valor = NORTE
 
         return self.valor
 
     def girar_a_esquerda(self):
 
-        if self.valor == 'N':
-            self.valor ='O'
-        elif self.valor =='O':
-            self.valor = 'S'
-        elif self.valor =='S':
-            self.valor ='L'
-        elif self.valor=='L':
-            self.valor = 'N'
+        self.valor = self.girar_a_esquerda_dct_dct(self.valor)
+
+        # if self.valor == NORTE:
+        #     self.valor =OESTE
+        # elif self.valor ==OESTE:
+        #     self.valor = SUL
+        # elif self.valor ==SUL:
+        #     self.valor =LESTE
+        # elif self.valor==LESTE:
+        #     self.valor = NORTE
 
         return self.valor
 
