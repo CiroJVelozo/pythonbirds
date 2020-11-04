@@ -58,5 +58,30 @@ class  direcao:
 
         return self.valor
 
+class carro:
+
+    def __init__(self,motor,direxao):
+        self.motor = motor
+        self.direcao = direcao
+
+    def calcular_velocidade(self):
+        return  self.motor.velocidade
+
+    def acelerar(self):
+        self.motor.acelerar()
+
+    def frear(self):
+        self.motor.frear()
+
+    def calcular_direcao(self):
+       return  self.direcao.valor
+
+    def giar_a_direita(self):
+         self.direcao.girar_a_direita()
+
+    def girar_a_esquerda(self):
+        self.direcao.girar_a_esquerda()
+
+
 if __name__ == '__main__':
     print()
