@@ -8,7 +8,7 @@ class Pessoa:
         self.filhos = list(filho)
 
     def comprimentar(self):
-        return f'Ola {id(self)}'
+        return f'Ola meu nome é {self.nome}'
     @staticmethod
     def metodo_estatico():
         return 42
@@ -18,14 +18,16 @@ class Pessoa:
         return f'{cls}, olhos={cls.olhos}'
 
 class  Homem(Pessoa):
-    pass
+    def comprimentar(self):
+        comprimentar_super = super().comprimentar()
+        return f'{comprimentar_super}.aperto de mão'
 
 class Mutante(Pessoa):
     olhos = 3
 
 if __name__ == '__main__':
 
-     jose = Pessoa( nome='José',idade=25)
+     jose = Homem( nome='José',idade=25)
 
      ciro = Mutante(jose,nome='Ciro',idade=25)
      #inserindo atributo dinamico no objeto ciro
@@ -47,5 +49,8 @@ if __name__ == '__main__':
 
      print(ciro.olhos)
      print(jose.olhos)
+
+     print(ciro.comprimentar())
+     print(jose.comprimentar())
 
 
