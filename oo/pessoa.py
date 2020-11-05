@@ -17,11 +17,14 @@ class Pessoa:
     def nome_e_atributos_da_classe(cls):
         return f'{cls}, olhos={cls.olhos}'
 
+class  Homem(Pessoa):
+    pass
+
 if __name__ == '__main__':
 
      jose = Pessoa( nome='José',idade=25)
 
-     ciro = Pessoa(jose,nome='Ciro',idade=25)
+     ciro = Homem(jose,nome='Ciro',idade=25)
      #inserindo atributo dinamico no objeto ciro
      ciro.sobrenome = 'josé velozo'
 
