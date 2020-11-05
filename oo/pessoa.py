@@ -20,11 +20,14 @@ class Pessoa:
 class  Homem(Pessoa):
     pass
 
+class Mutante(Pessoa):
+    olhos = 3
+
 if __name__ == '__main__':
 
      jose = Pessoa( nome='José',idade=25)
 
-     ciro = Homem(jose,nome='Ciro',idade=25)
+     ciro = Mutante(jose,nome='Ciro',idade=25)
      #inserindo atributo dinamico no objeto ciro
      ciro.sobrenome = 'josé velozo'
 
